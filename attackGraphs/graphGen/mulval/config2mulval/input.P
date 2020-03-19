@@ -1,0 +1,329 @@
+attackerLocated(g1).
+/* attackGoal(execCode(h1, _)).*/
+/*attackGoal(execCode(h2, _)).*/
+/*attackGoal(execCode(h3, _)).*/
+/*attackGoal(execCode(h4, _)).*/
+/*attackGoal(execCode(h5, _)).*/
+/*attackGoal(execCode(h6, _)).*/
+/*attackGoal(execCode(h7, _)).*/
+/*attackGoal(execCode(h8, _)).*/
+
+hacl(g1, sc2, httpProtocol, httpPort).
+hacl(sc2, sa5, httpProtocol, httpPort).
+hacl(sa5, sa8, httpProtocol, httpPort).
+hacl(sa8, h4, httpProtocol, httpPort).
+hacl(sc2, sa9, httpProtocol, httpPort).
+hacl(sa9, sa11, httpProtocol, httpPort).
+hacl(sa11, h5, httpProtocol, httpPort).
+hacl(sa9, sa12, httpProtocol, httpPort).
+hacl(sa12, h8, httpProtocol, httpPort).
+hacl(g1, sc3, httpProtocol, httpPort).
+hacl(sc3, sa6, httpProtocol, httpPort).
+hacl(sa6, sa7, httpProtocol, httpPort).
+hacl(sa7, h1, httpProtocol, httpPort).
+hacl(g2, sc2, httpProtocol, httpPort).
+hacl(sc2, sa13, httpProtocol, httpPort).
+hacl(sa13, sa15, httpProtocol, httpPort).
+hacl(sa15, h9, httpProtocol, httpPort).
+hacl(sa13, sa16, httpProtocol, httpPort).
+hacl(sa16, h12, httpProtocol, httpPort).
+hacl(sc2, sa17, httpProtocol, httpPort).
+hacl(sa17, sa19, httpProtocol, httpPort).
+hacl(sa19, h13, httpProtocol, httpPort).
+hacl(g2, sc3, httpProtocol, httpPort).
+hacl(sc3, sa18, httpProtocol, httpPort).
+hacl(sa18, sa20, httpProtocol, httpPort).
+hacl(sa20, h16, httpProtocol, httpPort).
+hacl(h1, sa7, httpProtocol, httpPort).
+hacl(sa7, h2, httpProtocol, httpPort).
+hacl(h1, sa7, nfsProtocol, nfsPort).
+hacl(sa7, h2, nfsProtocol, nfsPort).
+hacl(sa7, sa6, httpProtocol, httpPort).
+hacl(sa6, sc3, httpProtocol, httpPort).
+hacl(sc3, g1, httpProtocol, httpPort).
+hacl(h10, sa15, httpProtocol, httpPort).
+hacl(h10, sa15, nfsProtocol, nfsPort).
+hacl(sa15, h9, nfsProtocol, nfsPort).
+hacl(sa15, sa13, nfsProtocol, nfsPort).
+hacl(sa13, sc1, nfsProtocol, nfsPort).
+hacl(sc1, sa5, nfsProtocol, nfsPort).
+hacl(sa5, sa7, nfsProtocol, nfsPort).
+hacl(h11, sa16, httpProtocol, httpPort).
+hacl(h11, sa16, nfsProtocol, nfsPort).
+hacl(sa16, h12, nfsProtocol, nfsPort).
+hacl(sa16, sa14, nfsProtocol, nfsPort).
+hacl(sa14, sc4, nfsProtocol, nfsPort).
+hacl(sc4, sa6, nfsProtocol, nfsPort).
+hacl(sa6, sa8, nfsProtocol, nfsPort).
+hacl(sa8, h3, nfsProtocol, nfsPort).
+hacl(h12, sa16, httpProtocol, httpPort).
+hacl(sa16, h11, httpProtocol, httpPort).
+hacl(h12, sa16, nfsProtocol, nfsPort).
+hacl(sa16, h11, nfsProtocol, nfsPort).
+hacl(sa16, sa13, httpProtocol, httpPort).
+hacl(sa13, sc2, httpProtocol, httpPort).
+hacl(sc2, g2, httpProtocol, httpPort).
+hacl(h13, sa19, httpProtocol, httpPort).
+hacl(sa19, h14, httpProtocol, httpPort).
+hacl(h13, sa19, nfsProtocol, nfsPort).
+hacl(sa19, h14, nfsProtocol, nfsPort).
+hacl(sa19, sa17, httpProtocol, httpPort).
+hacl(sa17, sc2, httpProtocol, httpPort).
+hacl(h14, sa19, httpProtocol, httpPort).
+hacl(h14, sa19, nfsProtocol, nfsPort).
+hacl(sa19, h13, nfsProtocol, nfsPort).
+hacl(sa19, sa17, nfsProtocol, nfsPort).
+hacl(sa17, sc2, nfsProtocol, nfsPort).
+hacl(sc2, sa5, nfsProtocol, nfsPort).
+hacl(h15, sa20, httpProtocol, httpPort).
+hacl(h15, sa20, nfsProtocol, nfsPort).
+hacl(sa20, h16, nfsProtocol, nfsPort).
+hacl(sa20, sa17, nfsProtocol, nfsPort).
+hacl(sa5, sa8, nfsProtocol, nfsPort).
+hacl(h16, sa20, httpProtocol, httpPort).
+hacl(sa20, h15, httpProtocol, httpPort).
+hacl(h16, sa20, nfsProtocol, nfsPort).
+hacl(sa20, h15, nfsProtocol, nfsPort).
+hacl(sa20, sa18, httpProtocol, httpPort).
+hacl(sa18, sc3, httpProtocol, httpPort).
+hacl(sc3, g2, httpProtocol, httpPort).
+hacl(h2, sa7, httpProtocol, httpPort).
+hacl(h2, sa7, nfsProtocol, nfsPort).
+hacl(sa7, h1, nfsProtocol, nfsPort).
+hacl(sa7, sa5, nfsProtocol, nfsPort).
+hacl(sa5, sc1, nfsProtocol, nfsPort).
+hacl(sc1, sa13, nfsProtocol, nfsPort).
+hacl(sa13, sa15, nfsProtocol, nfsPort).
+hacl(sa15, h10, nfsProtocol, nfsPort).
+hacl(sc1, sa9, nfsProtocol, nfsPort).
+hacl(sa9, sa11, nfsProtocol, nfsPort).
+hacl(sa11, h6, nfsProtocol, nfsPort).
+hacl(sa5, sc2, nfsProtocol, nfsPort).
+hacl(sc2, sa17, nfsProtocol, nfsPort).
+hacl(sa17, sa19, nfsProtocol, nfsPort).
+hacl(h3, sa8, httpProtocol, httpPort).
+hacl(h3, sa8, nfsProtocol, nfsPort).
+hacl(sa8, h4, nfsProtocol, nfsPort).
+hacl(sa8, sa5, nfsProtocol, nfsPort).
+hacl(sa17, sa20, nfsProtocol, nfsPort).
+hacl(sc2, sa9, nfsProtocol, nfsPort).
+hacl(sa9, sa12, nfsProtocol, nfsPort).
+hacl(sa12, h7, nfsProtocol, nfsPort).
+hacl(sa8, sa6, nfsProtocol, nfsPort).
+hacl(sa6, sc4, nfsProtocol, nfsPort).
+hacl(sc4, sa14, nfsProtocol, nfsPort).
+hacl(sa14, sa16, nfsProtocol, nfsPort).
+hacl(h4, sa8, httpProtocol, httpPort).
+hacl(sa8, h3, httpProtocol, httpPort).
+hacl(h4, sa8, nfsProtocol, nfsPort).
+hacl(sa8, sa5, httpProtocol, httpPort).
+hacl(sa5, sc2, httpProtocol, httpPort).
+hacl(sc2, g1, httpProtocol, httpPort).
+hacl(h5, sa11, httpProtocol, httpPort).
+hacl(sa11, h6, httpProtocol, httpPort).
+hacl(h5, sa11, nfsProtocol, nfsPort).
+hacl(sa11, sa9, httpProtocol, httpPort).
+hacl(sa9, sc2, httpProtocol, httpPort).
+hacl(h6, sa11, httpProtocol, httpPort).
+hacl(h6, sa11, nfsProtocol, nfsPort).
+hacl(sa11, h5, nfsProtocol, nfsPort).
+hacl(sa11, sa9, nfsProtocol, nfsPort).
+hacl(sa9, sc1, nfsProtocol, nfsPort).
+hacl(h7, sa12, httpProtocol, httpPort).
+hacl(h7, sa12, nfsProtocol, nfsPort).
+hacl(sa12, h8, nfsProtocol, nfsPort).
+hacl(sa12, sa9, nfsProtocol, nfsPort).
+hacl(sa9, sc2, nfsProtocol, nfsPort).
+hacl(h8, sa12, httpProtocol, httpPort).
+hacl(sa12, h7, httpProtocol, httpPort).
+hacl(h8, sa12, nfsProtocol, nfsPort).
+hacl(sa12, sa9, httpProtocol, httpPort).
+hacl(h9, sa15, httpProtocol, httpPort).
+hacl(sa15, h10, httpProtocol, httpPort).
+hacl(h9, sa15, nfsProtocol, nfsPort).
+hacl(sa15, sa13, httpProtocol, httpPort).
+
+vulExists(sa5, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(sa5, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa17, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(sa17, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa8, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(sa8, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h5, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(h5, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa19, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(sa19, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h6, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(h6, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa12, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(sa12, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sc3, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(sc3, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa13, 'CVE-2012-0883', httpd).
+vulProperty('CVE-2012-0883', remoteExploit, dos).
+networkServiceInfo(sa13, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sc4, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sc4, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa5, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa5, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa8, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa8, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h2, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(h2, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h1, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(h1, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa7, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa7, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa14, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa14, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h5, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(h5, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa11, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa11, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa16, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa16, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa18, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa18, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa20, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa20, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h6, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(h6, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sc3, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sc3, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sc2, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sc2, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa9, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa9, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sc1, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sc1, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa19, 'CVE-2019-0190', httpd).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+networkServiceInfo(sa19, httpd, httpProtocol, httpPort, apache).
+
+vulExists(sa20, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sa20, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa13, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sa13, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa5, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sa5, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h2, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(h2, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa16, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sa16, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa14, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sa14, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h6, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(h6, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h3, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(h3, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa17, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sa17, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sc4, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sc4, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sc3, 'CVE-2019-6109', WinSCP).
+vulProperty('CVE-2019-6109', remoteExploit, confidentiality).
+networkServiceInfo(sc3, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h8, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(h8, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h2, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(h2, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h1, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(h1, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h3, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(h3, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa6, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(sa6, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa20, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(sa20, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(h4, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(h4, WinSCP, nfsProtocol, nfsPort, user).
+
+vulExists(sa12, 'CVE-2002-1359', WinSCP).
+vulProperty('CVE-2002-1359', remoteExploit, privEscalation).
+networkServiceInfo(sa12, WinSCP, nfsProtocol, nfsPort, user).
+

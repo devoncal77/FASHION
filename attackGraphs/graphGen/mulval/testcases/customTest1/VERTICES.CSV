@@ -1,0 +1,50 @@
+1,"execCode(_,root)","OR",0
+2,"RULE 2 (remote exploit of a server program)","AND",0
+3,"netAccess(_,httpProtocol,httpPort)","OR",0
+4,"RULE 5 (multi-hop access)","AND",0
+5,"hacl(subnet_1,_,httpProtocol,httpPort)","LEAF",1
+6,"execCode(subnet_1,root)","OR",0
+7,"RULE 2 (remote exploit of a server program)","AND",0
+8,"netAccess(subnet_1,httpProtocol,httpPort)","OR",0
+9,"RULE 5 (multi-hop access)","AND",0
+10,"hacl(webServer_1,subnet_1,httpProtocol,httpPort)","LEAF",1
+11,"execCode(webServer_1,root)","OR",0
+12,"RULE 2 (remote exploit of a server program)","AND",0
+13,"netAccess(webServer_1,tcp,80)","OR",0
+14,"RULE 5 (multi-hop access)","AND",0
+15,"hacl(internet,webServer_1,tcp,80)","LEAF",1
+16,"execCode(internet,root)","OR",0
+17,"RULE 2 (remote exploit of a server program)","AND",0
+18,"netAccess(internet,httpProtocol,httpPort)","OR",0
+19,"RULE 5 (multi-hop access)","AND",0
+20,"hacl(subnet_1,internet,httpProtocol,httpPort)","LEAF",1
+21,"RULE 7 (direct on-host access)","AND",0
+22,"attackerLocated(internet)","LEAF",1
+23,"networkServiceInfo(internet,httpd,httpProtocol,httpPort,root)","LEAF",1
+24,"vulExists(internet,'CVE-2018-6312',httpd,remoteExploit,privEscalation)","LEAF",1
+25,"RULE 6 (direct network access)","AND",0
+26,"networkServiceInfo(webServer_1,httpd,tcp,80,root)","LEAF",1
+27,"vulExists(webServer_1,'CAN-2002-0392',httpd,remoteExploit,privEscalation)","LEAF",1
+28,"RULE 2 (remote exploit of a server program)","AND",0
+29,"vulExists(webServer_1,'CVE-2018-6312',httpd,remoteExploit,privEscalation)","LEAF",1
+30,"networkServiceInfo(subnet_1,httpd,httpProtocol,httpPort,root)","LEAF",1
+31,"vulExists(subnet_1,'CVE-2018-6312',httpd,remoteExploit,privEscalation)","LEAF",1
+32,"RULE 2 (remote exploit of a server program)","AND",0
+33,"netAccess(subnet_1,tcp,80)","OR",0
+34,"RULE 5 (multi-hop access)","AND",0
+35,"hacl(webServer_1,subnet_1,tcp,80)","LEAF",1
+36,"networkServiceInfo(subnet_1,httpd,tcp,80,root)","LEAF",1
+37,"networkServiceInfo(_,httpd,httpProtocol,httpPort,root)","LEAF",1
+38,"vulExists(_,'CVE-2018-6312',httpd,remoteExploit,privEscalation)","LEAF",1
+39,"execCode(subnet_2,root)","OR",0
+40,"RULE 2 (remote exploit of a server program)","AND",0
+41,"netAccess(subnet_2,httpProtocol,httpPort)","OR",0
+42,"RULE 5 (multi-hop access)","AND",0
+43,"hacl(subnet_1,subnet_2,httpProtocol,httpPort)","LEAF",1
+44,"networkServiceInfo(subnet_2,httpd,httpProtocol,httpPort,root)","LEAF",1
+45,"vulExists(subnet_2,'CVE-2018-6312',httpd,remoteExploit,privEscalation)","LEAF",1
+46,"RULE 2 (remote exploit of a server program)","AND",0
+47,"netAccess(subnet_2,tcp,80)","OR",0
+48,"RULE 5 (multi-hop access)","AND",0
+49,"hacl(webServer_1,subnet_2,tcp,80)","LEAF",1
+50,"networkServiceInfo(subnet_2,httpd,tcp,80,root)","LEAF",1

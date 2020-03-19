@@ -1,0 +1,15 @@
+attackerLocated(h1).
+attackGoal(execCode(h3, apache)).
+
+hacl(h1, h2, httpProtocol, httpPort).
+hacl(h2, h3, httpProtocol, httpPort).
+
+vulExists(h2, 'CVE-2019-0190', httpd).
+networkServiceInfo(h2, httpd, httpProtocol, httpPort, apache).
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+
+
+vulExists(h3, 'CVE-2019-0190', httpd).
+networkServiceInfo(h3, httpd, httpProtocol, httpPort, apache).
+
+cvss('CVE-2019-0190',l).

@@ -1,0 +1,50 @@
+1,"execCode(h3,apache)","OR",0
+2,"RULE 2 (remote exploit of a server program)","AND",0
+3,"netAccess(h3,httpProtocol,httpPort)","OR",0
+4,"RULE 5 (multi-hop access)","AND",0
+5,"hacl(sa8,h3,httpProtocol,httpPort)","LEAF",1
+6,"execCode(sa8,apache)","OR",0
+7,"RULE 2 (remote exploit of a server program)","AND",0
+8,"netAccess(sa8,httpProtocol,httpPort)","OR",0
+9,"RULE 5 (multi-hop access)","AND",0
+10,"hacl(h3,sa8,httpProtocol,httpPort)","LEAF",1
+11,"RULE 5 (multi-hop access)","AND",0
+12,"execCode(h3,user)","OR",0
+13,"RULE 2 (remote exploit of a server program)","AND",0
+14,"netAccess(h3,nfsProtocol,nfsPort)","OR",0
+15,"RULE 5 (multi-hop access)","AND",0
+16,"hacl(sa8,h3,nfsProtocol,nfsPort)","LEAF",1
+17,"RULE 6 (direct network access)","AND",0
+18,"attackerLocated(sa8)","LEAF",1
+19,"RULE 7 (direct on-host access)","AND",0
+20,"attackerLocated(h3)","LEAF",1
+21,"networkServiceInfo(h3,_,nfsProtocol,nfsPort,user)","LEAF",1
+22,"vulExists(h3,'CVE-2014-3791',_,remoteExploit,privEscalation)","LEAF",1
+23,"RULE 2 (remote exploit of a server program)","AND",0
+24,"networkServiceInfo(h3,httpd,nfsProtocol,nfsPort,user)","LEAF",1
+25,"vulExists(h3,'CVE-2019-0190',httpd,remoteExploit,privEscalation)","LEAF",1
+26,"RULE 5 (multi-hop access)","AND",0
+27,"hacl(h4,sa8,httpProtocol,httpPort)","LEAF",1
+28,"execCode(h4,apache)","OR",0
+29,"RULE 2 (remote exploit of a server program)","AND",0
+30,"netAccess(h4,httpProtocol,httpPort)","OR",0
+31,"RULE 5 (multi-hop access)","AND",0
+32,"hacl(sa8,h4,httpProtocol,httpPort)","LEAF",1
+33,"RULE 6 (direct network access)","AND",0
+34,"RULE 7 (direct on-host access)","AND",0
+35,"attackerLocated(h4)","LEAF",1
+36,"networkServiceInfo(h4,httpd,httpProtocol,httpPort,apache)","LEAF",1
+37,"vulExists(h4,'CVE-2019-0190',httpd,remoteExploit,privEscalation)","LEAF",1
+38,"RULE 6 (direct network access)","AND",0
+39,"RULE 6 (direct network access)","AND",0
+40,"RULE 6 (direct network access)","AND",0
+41,"hacl(sa5,sa8,httpProtocol,httpPort)","LEAF",1
+42,"attackerLocated(sa5)","LEAF",1
+43,"RULE 7 (direct on-host access)","AND",0
+44,"networkServiceInfo(sa8,httpd,httpProtocol,httpPort,apache)","LEAF",1
+45,"vulExists(sa8,'CVE-2019-0190',httpd,remoteExploit,privEscalation)","LEAF",1
+46,"RULE 6 (direct network access)","AND",0
+47,"RULE 7 (direct on-host access)","AND",0
+48,"networkServiceInfo(h3,httpd,httpProtocol,httpPort,apache)","LEAF",1
+49,"vulExists(h3,'CVE-2014-3791',httpd,remoteExploit,privEscalation)","LEAF",1
+50,"RULE 2 (remote exploit of a server program)","AND",0

@@ -1,0 +1,31 @@
+1,"execCode(h4,apache)","OR",0
+2,"RULE 2 (remote exploit of a server program)","AND",0
+3,"netAccess(h4,httpProtocol,httpPort)","OR",0
+4,"RULE 5 (multi-hop access)","AND",0
+5,"hacl(h3,h4,httpProtocol,httpPort)","LEAF",1
+6,"execCode(h3,apache)","OR",0
+7,"RULE 2 (remote exploit of a server program)","AND",0
+8,"netAccess(h3,httpProtocol,httpPort)","OR",0
+9,"RULE 5 (multi-hop access)","AND",0
+10,"hacl(h1,h3,httpProtocol,httpPort)","LEAF",1
+11,"execCode(h1,apache)","OR",0
+12,"RULE 2 (remote exploit of a server program)","AND",0
+13,"netAccess(h1,httpProtocol,httpPort)","OR",0
+14,"RULE 6 (direct network access)","AND",0
+15,"hacl(g1,h1,httpProtocol,httpPort)","LEAF",1
+16,"attackerLocated(g1)","LEAF",1
+17,"networkServiceInfo(h1,httpd,httpProtocol,httpPort,apache)","LEAF",1
+18,"vulExists(h1,'CVE-2019-0190',httpd,remoteExploit,privEscalation)","LEAF",1
+19,"networkServiceInfo(h3,httpd,httpProtocol,httpPort,apache)","LEAF",1
+20,"vulExists(h3,'CVE-2019-0191',httpd,remoteExploit,privEscalation)","LEAF",1
+21,"RULE 5 (multi-hop access)","AND",0
+22,"hacl(h6,h4,httpProtocol,httpPort)","LEAF",1
+23,"execCode(h6,apache)","OR",0
+24,"RULE 2 (remote exploit of a server program)","AND",0
+25,"netAccess(h6,httpProtocol,httpPort)","OR",0
+26,"RULE 5 (multi-hop access)","AND",0
+27,"hacl(h1,h6,httpProtocol,httpPort)","LEAF",1
+28,"networkServiceInfo(h6,httpd,httpProtocol,httpPort,apache)","LEAF",1
+29,"vulExists(h6,'CVE-2019-0192',httpd,remoteExploit,privEscalation)","LEAF",1
+30,"networkServiceInfo(h4,httpd,httpProtocol,httpPort,apache)","LEAF",1
+31,"vulExists(h4,'CVE-2019-0190',httpd,remoteExploit,privEscalation)","LEAF",1

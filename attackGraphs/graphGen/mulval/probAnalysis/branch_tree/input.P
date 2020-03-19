@@ -1,0 +1,44 @@
+attackerLocated(g1).
+attackGoal(execCode(h4, apache)).
+
+hacl(g1, h1, httpProtocol, httpPort).
+hacl(g1, h7, httpProtocol, httpPort).
+hacl(h1, h6, httpProtocol, httpPort).
+hacl(h1, h3, httpProtocol, httpPort).
+hacl(h6, h4, httpProtocol, httpPort).
+hacl(h3, h4, httpProtocol, httpPort).
+hacl(h3, h5, httpProtocol, httpPort).
+
+vulExists(h1, 'CVE-2019-0190', httpd).
+networkServiceInfo(h1, httpd, httpProtocol, httpPort, apache).
+
+vulProperty('CVE-2019-0190', remoteExploit, privEscalation).
+vulProperty('CVE-2019-0191', remoteExploit, privEscalation).
+vulProperty('CVE-2019-0192', remoteExploit, privEscalation).
+vulProperty('CVE-2019-0193', remoteExploit, privEscalation).
+
+
+vulExists(h2, 'CVE-2019-0191', httpd).
+networkServiceInfo(h2, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h3, 'CVE-2019-0191', httpd).
+networkServiceInfo(h3, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h4, 'CVE-2019-0190', httpd).
+networkServiceInfo(h4, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h5, 'CVE-2019-0192', httpd).
+networkServiceInfo(h5, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h6, 'CVE-2019-0192', httpd).
+networkServiceInfo(h6, httpd, httpProtocol, httpPort, apache).
+
+vulExists(h7, 'CVE-2019-0193', httpd).
+networkServiceInfo(h7, httpd, httpProtocol, httpPort, apache).
+
+cvss('CVE-2019-0190',l).
+cvss('CVE-2019-0191',l).
+cvss('CVE-2019-0192',m).
+cvss('CVE-2019-0193',h).
+
+

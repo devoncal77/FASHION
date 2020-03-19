@@ -1,0 +1,31 @@
+digraph G {
+	1 [label="1:execCode(h3,apache):0",shape=diamond];
+	2 [label="2:RULE 2 (remote exploit of a server program):0",shape=ellipse];
+	3 [label="3:netAccess(h3,httpProtocol,httpPort):0",shape=diamond];
+	4 [label="4:RULE 5 (multi-hop access):0",shape=ellipse];
+	5 [label="5:hacl(h2,h3,httpProtocol,httpPort):1",shape=box];
+	6 [label="6:execCode(h2,apache):0",shape=diamond];
+	7 [label="7:RULE 2 (remote exploit of a server program):0",shape=ellipse];
+	8 [label="8:netAccess(h2,httpProtocol,httpPort):0",shape=diamond];
+	9 [label="9:RULE 6 (direct network access):0",shape=ellipse];
+	10 [label="10:hacl(h1,h2,httpProtocol,httpPort):1",shape=box];
+	11 [label="11:attackerLocated(h1):1",shape=box];
+	12 [label="12:networkServiceInfo(h2,httpd,httpProtocol,httpPort,apache):1",shape=box];
+	13 [label="13:vulExists(h2,'CVE-2019-0190',httpd,remoteExploit,privEscalation):1",shape=box];
+	14 [label="14:networkServiceInfo(h3,httpd,httpProtocol,httpPort,apache):1",shape=box];
+	15 [label="15:vulExists(h3,'CVE-2019-0190',httpd,remoteExploit,privEscalation):1",shape=box];
+	5 -> 	4;
+	10 -> 	9;
+	11 -> 	9;
+	9 -> 	8;
+	8 -> 	7;
+	12 -> 	7;
+	13 -> 	7;
+	7 -> 	6;
+	6 -> 	4;
+	4 -> 	3;
+	3 -> 	2;
+	14 -> 	2;
+	15 -> 	2;
+	2 -> 	1;
+}

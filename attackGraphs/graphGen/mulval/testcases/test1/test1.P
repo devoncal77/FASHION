@@ -1,0 +1,22 @@
+attackerLocated(internet).
+attackGoal(execCode(webServer,_)).
+
+hacl(internet, webServer, tcp, 80).
+hacl(webServer, internet, _, _).
+hacl(webServer, server1, httpProtocol, httpPort).
+
+vulExists(webServer, 'CAN-2002-0392', httpd).
+vulProperty('CAN-2002-0392', remoteExploit, privEscalation).
+networkServiceInfo(webServer , httpd, tcp , 80 , apache).
+
+vulExists(server1,'CVE-2010-0483',windows_2000).
+vulProperty('CVE-2010-0483',remoteExploit,privEscalation).
+vulProperty('CVE-2010-0483',remoteClient,privEscalation).
+inCompetent(victim_1).
+hasAccount(victim_1, 'server1', user).
+
+
+cvss('CAN-2002-0392',h).
+cvss('CVE-2010-0483',h).
+
+isClient(windows_2000).

@@ -1,0 +1,24 @@
+attackerLocated(internet).
+attackGoal(execCode(H1, _)).
+
+hacl(internet, webServer_1, tcp, 80).
+hacl(webServer_1, subnet_1, _, _).
+hacl(webServer_1, subnet_2, tcp, 80).
+hacl(subnet_1, H1, httpProtocol, httpPort).
+
+vulExists(webServer_1, 'CAN-2002-0392', httpd).
+vulProperty('CAN-2002-0392', remoteExploit, privEscalation).
+networkServiceInfo(webServer_1, httpd, tcp, 80, root).
+
+vulExists(subnet_1, 'CVE-2006-0392', httpd).
+vulProperty('CVE-2018-6312', remoteExploit, privEscalation).
+networkServiceInfo(subnet_1, httpd, tcp, 80, root).
+
+vulExists(subnet_2, 'CVE-2003-0392', httpd).
+vulProperty('CVE-2018-6312', remoteExploit, privEscalation).
+networkServiceInfo(subnet_2, httpd, tcp , 80 , root).
+
+
+vulExists(H1, 'CVE-2018-6312', httpd).
+vulProperty('CVE-2018-6312', remoteExploit, priviliegeEscalation).
+networkServiceInfo(H1, httpd, httpProtocol, httpPort, root).

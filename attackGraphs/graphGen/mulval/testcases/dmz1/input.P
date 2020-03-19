@@ -1,0 +1,12 @@
+attackerLocated(internet).
+attackGoal(execCode(workStation,_)).
+
+hacl(internet, webServer1, httpProtocol, httpPort).
+hacl(internet, webServer2, httpProtocol, httpPort).
+hacl(internet, mailServer, httpProtocol, httpPort).
+hacl(webServer, inWebServer, httpProtocol, httpPort).
+
+networkServiceInfo(fileServer, mountd, rpc, 100005, root).
+
+
+

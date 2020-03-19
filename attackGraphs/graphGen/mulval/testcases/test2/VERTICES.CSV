@@ -1,0 +1,51 @@
+1,"execCode(dmz_host_10,root)","OR",0
+2,"RULE 1 (local exploit)","AND",0
+3,"vulExists(dmz_host_10,dmz_host_10_localVul_0,localApplication,localExploit,privEscalation)","LEAF",1
+4,"execCode(dmz_host_10,user)","OR",0
+5,"RULE 2 (remote exploit of a server program)","AND",0
+6,"netAccess(dmz_host_10,httpProtocol,httpPort)","OR",0
+7,"RULE 6 (direct network access)","AND",0
+8,"hacl(internet,dmz_host_10,httpProtocol,httpPort)","LEAF",1
+9,"attackerLocated(internet)","LEAF",1
+10,"networkServiceInfo(dmz_host_10,serverApplication,httpProtocol,httpPort,user)","LEAF",1
+11,"vulExists(dmz_host_10,dmz_host_10_remoteVul_0,serverApplication,remoteExploit,privEscalation)","LEAF",1
+12,"RULE 2 (remote exploit of a server program)","AND",0
+13,"vulExists(dmz_host_10,dmz_host_10_remoteVul_1,serverApplication,remoteExploit,privEscalation)","LEAF",1
+14,"RULE 2 (remote exploit of a server program)","AND",0
+15,"vulExists(dmz_host_10,dmz_host_10_remoteVul_2,serverApplication,remoteExploit,privEscalation)","LEAF",1
+16,"RULE 2 (remote exploit of a server program)","AND",0
+17,"vulExists(dmz_host_10,dmz_host_10_remoteVul_3,serverApplication,remoteExploit,privEscalation)","LEAF",1
+18,"execCode(fileServers_host_10,user)","OR",0
+19,"RULE 2 (remote exploit of a server program)","AND",0
+20,"netAccess(fileServers_host_10,httpProtocol,httpPort)","OR",0
+21,"RULE 6 (direct network access)","AND",0
+22,"hacl(internet,fileServers_host_10,httpProtocol,httpPort)","LEAF",1
+23,"networkServiceInfo(fileServers_host_10,serverApplication,httpProtocol,httpPort,user)","LEAF",1
+24,"vulExists(fileServers_host_10,fileServers_host_10_remoteVul_0,serverApplication,remoteExploit,privEscalation)","LEAF",1
+25,"RULE 2 (remote exploit of a server program)","AND",0
+26,"vulExists(fileServers_host_10,fileServers_host_10_remoteVul_1,serverApplication,remoteExploit,privEscalation)","LEAF",1
+27,"RULE 2 (remote exploit of a server program)","AND",0
+28,"vulExists(fileServers_host_10,fileServers_host_10_remoteVul_2,serverApplication,remoteExploit,privEscalation)","LEAF",1
+29,"execCode(fileServers_host_9,user)","OR",0
+30,"RULE 2 (remote exploit of a server program)","AND",0
+31,"netAccess(fileServers_host_9,httpProtocol,httpPort)","OR",0
+32,"RULE 5 (multi-hop access)","AND",0
+33,"hacl(fileServers_host_10,fileServers_host_9,httpProtocol,httpPort)","LEAF",1
+34,"networkServiceInfo(fileServers_host_9,serverApplication,httpProtocol,httpPort,user)","LEAF",1
+35,"vulExists(fileServers_host_9,fileServers_host_9_remoteVul_0,serverApplication,remoteExploit,privEscalation)","LEAF",1
+36,"RULE 2 (remote exploit of a server program)","AND",0
+37,"vulExists(fileServers_host_9,fileServers_host_9_remoteVul_1,serverApplication,remoteExploit,privEscalation)","LEAF",1
+38,"execCode(workStation_host_10,root)","OR",0
+39,"RULE 1 (local exploit)","AND",0
+40,"vulExists(workStation_host_10,workStation_host_10_localVul_0,localApplication,localExploit,privEscalation)","LEAF",1
+41,"execCode(workStation_host_10,user)","OR",0
+42,"RULE 2 (remote exploit of a server program)","AND",0
+43,"netAccess(workStation_host_10,httpProtocol,httpPort)","OR",0
+44,"RULE 5 (multi-hop access)","AND",0
+45,"hacl(fileServers_host_10,workStation_host_10,httpProtocol,httpPort)","LEAF",1
+46,"networkServiceInfo(workStation_host_10,serverApplication,httpProtocol,httpPort,user)","LEAF",1
+47,"vulExists(workStation_host_10,workStation_host_10_remoteVul_0,serverApplication,remoteExploit,privEscalation)","LEAF",1
+48,"RULE 2 (remote exploit of a server program)","AND",0
+49,"vulExists(workStation_host_10,workStation_host_10_remoteVul_1,serverApplication,remoteExploit,privEscalation)","LEAF",1
+50,"RULE 1 (local exploit)","AND",0
+51,"vulExists(workStation_host_10,workStation_host_10_localVul_1,localApplication,localExploit,privEscalation)","LEAF",1

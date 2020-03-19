@@ -1,0 +1,26 @@
+1,"execCode(workStation,root)","OR",0.43
+2,"RULE 4 (Trojan horse installation)","AND",0.43
+3,"accessFile(workStation,write,'/usr/local/share')","OR",0.5375
+4,"RULE 16 (NFS semantics)","AND",0.5375
+5,"accessFile(fileServer,write,'/export')","OR",0.6719
+6,"RULE 10 (execCode implies file access)","AND",0.3277
+7,"canAccessFile(fileServer,root,write,'/export')","LEAF",1.0
+8,"execCode(fileServer,root)","OR",0.4096
+9,"RULE 2 (remote exploit of a server program)","AND",0.4096
+10,"netAccess(fileServer,rpc,100005)","OR",0.512
+11,"RULE 5 (multi-hop access)","AND",0.512
+12,"hacl(webServer,fileServer,rpc,100005)","LEAF",1.0
+13,"execCode(webServer,apache)","OR",0.64
+14,"RULE 2 (remote exploit of a server program)","AND",0.64
+15,"netAccess(webServer,tcp,80)","OR",0.8
+16,"RULE 6 (direct network access)","AND",0.8
+17,"hacl(internet,webServer,tcp,80)","LEAF",1.0
+18,"attackerLocated(internet)","LEAF",1.0
+19,"networkServiceInfo(webServer,httpd,tcp,80,apache)","LEAF",1.0
+20,"vulExists(webServer,_,httpd,remoteExploit,privEscalation)","LEAF",1.0
+21,"networkServiceInfo(fileServer,mountd,rpc,100005,root)","LEAF",1.0
+22,"vulExists(fileServer,vulID,mountd,remoteExploit,privEscalation)","LEAF",1.0
+23,"RULE 17 (NFS shell)","AND",0.512
+24,"hacl(webServer,fileServer,nfsProtocol,nfsPort)","LEAF",1.0
+25,"nfsExportInfo(fileServer,'/export',write,webServer)","LEAF",1.0
+26,"nfsMounted(workStation,'/usr/local/share',fileServer,'/export',read)","LEAF",1.0

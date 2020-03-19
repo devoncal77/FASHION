@@ -1,0 +1,160 @@
+
+
+            INSTALLATION SUMMARY
+            --------------------
+
+XSB Version:	   3.8.0
+Code name:	   Three-Buck Chuck
+Release date:	   2017-10-28
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Thu Mar  7 17:00:03 EST 2019
+
+  Build process is looking for XSB sources in:	  /home/nchan/XSB
+  XSB should be installed in:			  /home/nchan/XSB
+  Configuration-specific executables go in:	  /home/nchan/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/nchan/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/nchan/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/nchan/XSB/site
+  Site configuration-specific code goes in:	  /home/nchan/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  gcc   -O3 -fno-strict-aliasing   -fPIC -Wall -pipe   
+  builtin.c will be built with: 		  gcc  -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+  loader_xsb.c will be built with: 		  gcc  -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+  emuloop.c will be built with: 		  gcc  -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+  tr_utils.c will be built with:		  gcc  -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  yes
+  Demand support:                                 no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:                                  /usr/bin/javac
+  Support for InterProlog's native engine:   	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:                yes
+  POSIX wildcard matching libraries:              yes
+
+  Curl support (HTTP protocol library):           no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching):           yes
+  PCRE C flags:        	                          -g -O2
+  PCRE loader flags:                              
+
+
+
+make[1]: Entering directory `/home/nchan/XSB/emu'
+
+Compiling XSB with gcc using -O3 -fno-strict-aliasing   -fPIC -Wall -pipe   
+
+	[gcc] main_xsb.c
+	[gcc] auxlry.c
+	[gcc] biassert.c
+	[gcc] builtin.c using -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+In file included from builtin.c:1410:0:
+io_builtins_xsb_i.h: In function ‘file_function’:
+io_builtins_xsb_i.h:1075:33: warning: ‘charset’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     open_files[io_port].charset = charset;
+                                 ^
+	[gcc] call_xsb.c
+	[gcc] cinterf.c
+	[gcc] conc_compl.c
+	[gcc] debug_xsb.c
+	[gcc] dis.c
+	[gcc] dynload.c
+	[gcc] dynamic_stack.c
+	[gcc] deadlock.c
+	[gcc] emuloop.c using -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+	[gcc] error_xsb.c
+	[gcc] findall.c
+	[gcc] function.c
+	[gcc] hash_xsb.c
+	[gcc] hashtable_xsb.c
+	[gcc] heap_xsb.c
+	[gcc] init_xsb.c
+	[gcc] inst_xsb.c
+	[gcc] io_builtins_xsb.c
+	[gcc] loader_xsb.c using -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+	[gcc] memory_xsb.c
+	[gcc] orient_xsb.c
+	[gcc] pathname_xsb.c
+	[gcc] psc_xsb.c
+	[gcc] random_xsb.c
+	[gcc] remove_unf.c
+	[gcc] residual.c
+	[gcc] rw_lock.c
+	[gcc] scc_xsb.c
+	[gcc] slgdelay.c
+	[gcc] socket_xsb.c
+	[gcc] string_xsb.c
+	[gcc] storage_xsb.c
+	[gcc] struct_manager.c
+	[gcc] struct_intern.c
+	[gcc] sub_delete.c
+	[gcc] subp.c
+	[gcc] system_xsb.c
+	[gcc] table_stats.c
+	[gcc] tables.c
+	[gcc] thread_xsb.c
+thread_xsb.c: In function ‘init_message_queue’:
+thread_xsb.c:2010:9: warning: variable ‘pos’ set but not used [-Wunused-but-set-variable]
+   { int pos;
+         ^
+	[gcc] timer_xsb.c
+	[gcc] token_xsb.c
+	[gcc] tr_utils.c using -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
+	[gcc] trace_xsb.c
+	[gcc] trie_lookup.c
+	[gcc] trie_search.c
+	[gcc] tries.c
+	[gcc] tst_insert.c
+	[gcc] tst_retrv.c
+	[gcc] tst_unify.c
+	[gcc] tst_utils.c
+	[gcc] varstring.c
+	[gcc] ubi_BinTree.c
+	[gcc] ubi_SplayTree.c
+	[gcc] hashtable.c
+	[gcc] hashtable_itr.c
+	[gcc] sha1.c
+	[gcc] md5.c
+	[gcc] url_encode.c
+	[gcc] getMemorySize.c
+	[gcc] incr_xsb.c
+	[gcc] call_graph_xsb.c
+
+Making XSB executable /home/nchan/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+	[gcc] -o /home/nchan/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+system_xsb.o: In function `sys_system':
+system_xsb.c:(.text+0xfa6): warning: the use of `tempnam' is dangerous, better use `mkstemp'
+make[1]: Leaving directory `/home/nchan/XSB/emu'
+make[1]: Entering directory `/home/nchan/XSB/gpp'
+
+	[gcc] gpp.c using  
+	[gcc] -o gpp
+
+make[1]: Leaving directory `/home/nchan/XSB/gpp'
+
+
+----------------- Warnings ------------------------
+While compiling XSB/cmplib:
+-------------------- End --------------------------
+----------------- Warnings ------------------------
+While compiling XSB/lib:
+-------------------- End --------------------------
+----------------- Warnings ------------------------
+While compiling XSB/syslib:
+-------------------- End --------------------------
+

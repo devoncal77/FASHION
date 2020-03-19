@@ -1,0 +1,203 @@
+1,"execCode(citrixServer_2,user)","OR",0
+2,"RULE 0 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+3,"canAccessHost(citrixServer_2)","OR",0
+4,"RULE 8 (Access a host through executing code on the machine)","AND",0
+4,1,-1
+3,4,-1
+2,3,-1
+5,"hasAccount(victim_2_2,citrixServer_2,user)","LEAF",1
+2,5,-1
+6,"principalCompromised(victim_2_2)","OR",0
+7,"RULE 12 (password sniffing)","AND",0
+7,1,-1
+7,5,-1
+6,7,-1
+2,6,-1
+1,2,-1
+8,"RULE 3 (remote exploit for a client program)","AND",0
+9,"accessMaliciousInput(citrixServer_2,victim_2_2,ie)","OR",0
+10,"RULE 22 (Browsing a malicious website)","AND",0
+11,"attackerLocated(internet)","LEAF",1
+10,11,-1
+12,"hacl(citrixServer_2,internet,httpProtocol,httpPort)","LEAF",1
+10,12,-1
+13,"inCompetent(victim_2_2)","LEAF",1
+10,13,-1
+9,10,-1
+8,9,-1
+8,5,-1
+14,"vulExists(citrixServer_2,'N2-2010-0490',ie,remoteClient,privEscalation)","LEAF",1
+8,14,-1
+1,8,-1
+15,"execCode(commServer_2,user)","OR",0
+16,"RULE 0 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+17,"canAccessHost(commServer_2)","OR",0
+18,"RULE 8 (Access a host through executing code on the machine)","AND",0
+18,15,-1
+17,18,-1
+16,17,-1
+19,"hasAccount(victim_2_1,commServer_2,user)","LEAF",1
+16,19,-1
+20,"principalCompromised(victim_2_1)","OR",0
+21,"RULE 12 (password sniffing)","AND",0
+21,15,-1
+21,19,-1
+20,21,-1
+16,20,-1
+15,16,-1
+22,"RULE 3 (remote exploit for a client program)","AND",0
+23,"accessMaliciousInput(commServer_2,victim_2_1,windows_2000)","OR",0
+24,"RULE 22 (Browsing a malicious website)","AND",0
+24,11,-1
+25,"hacl(commServer_2,internet,httpProtocol,httpPort)","LEAF",1
+24,25,-1
+26,"inCompetent(victim_2_1)","LEAF",1
+24,26,-1
+23,24,-1
+22,23,-1
+22,19,-1
+27,"vulExists(commServer_2,'N2-2010-0483',windows_2000,remoteClient,privEscalation)","LEAF",1
+22,27,-1
+15,22,-1
+28,"execCode(dataHistorian_2,root)","OR",0
+29,"RULE 2 (remote exploit of a server program)","AND",0
+30,"netAccess(dataHistorian_2,httpProtocol,httpPort)","OR",0
+31,"RULE 5 (multi-hop access)","AND",0
+32,"hacl(commServer_2,dataHistorian_2,httpProtocol,httpPort)","LEAF",1
+31,32,-1
+31,15,-1
+30,31,-1
+29,30,-1
+33,"networkServiceInfo(dataHistorian_2,mountd,httpProtocol,httpPort,root)","LEAF",1
+29,33,-1
+34,"vulExists(dataHistorian_2,'N2-2010-0494',mountd,remoteExploit,privEscalation)","LEAF",1
+29,34,-1
+28,29,-1
+35,"execCode(mailServer_1,root)","OR",0
+36,"RULE 4 (Trojan horse installation)","AND",0
+37,"accessFile(mailServer_1,write,'/export')","OR",0
+38,"RULE 17 (NFS shell)","AND",0
+39,"hacl(webServer_1,mailServer_1,nfsProtocol,nfsPort)","LEAF",1
+38,39,-1
+40,"nfsExportInfo(mailServer_1,'/export',write,webServer_1)","LEAF",1
+38,40,-1
+41,"execCode(webServer_1,apache)","OR",0
+42,"RULE 2 (remote exploit of a server program)","AND",0
+43,"netAccess(webServer_1,tcp,80)","OR",0
+44,"RULE 6 (direct network access)","AND",0
+45,"hacl(internet,webServer_1,tcp,80)","LEAF",1
+44,45,-1
+44,11,-1
+43,44,-1
+42,43,-1
+46,"networkServiceInfo(webServer_1,httpd,tcp,80,apache)","LEAF",1
+42,46,-1
+47,"vulExists(webServer_1,'N1-2002-0392',httpd,remoteExploit,privEscalation)","LEAF",1
+42,47,-1
+41,42,-1
+38,41,-1
+37,38,-1
+36,37,-1
+35,36,-1
+48,"execCode(subnet_1_1,user)","OR",0
+49,"RULE 0 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+50,"canAccessHost(subnet_1_1)","OR",0
+51,"RULE 8 (Access a host through executing code on the machine)","AND",0
+51,48,-1
+50,51,-1
+49,50,-1
+52,"hasAccount(victim_1_1,subnet_1_1,user)","LEAF",1
+49,52,-1
+53,"principalCompromised(victim_1_1)","OR",0
+54,"RULE 12 (password sniffing)","AND",0
+54,48,-1
+54,52,-1
+53,54,-1
+49,53,-1
+48,49,-1
+55,"RULE 3 (remote exploit for a client program)","AND",0
+56,"accessMaliciousInput(subnet_1_1,victim_1_1,windows_2000)","OR",0
+57,"RULE 22 (Browsing a malicious website)","AND",0
+57,11,-1
+58,"hacl(subnet_1_1,internet,httpProtocol,httpPort)","LEAF",1
+57,58,-1
+59,"inCompetent(victim_1_1)","LEAF",1
+57,59,-1
+56,57,-1
+55,56,-1
+55,52,-1
+60,"vulExists(subnet_1_1,'N1-2010-0483',windows_2000,remoteClient,privEscalation)","LEAF",1
+55,60,-1
+48,55,-1
+61,"execCode(subnet_1_2,user)","OR",0
+62,"RULE 0 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+63,"canAccessHost(subnet_1_2)","OR",0
+64,"RULE 8 (Access a host through executing code on the machine)","AND",0
+64,61,-1
+63,64,-1
+62,63,-1
+65,"hasAccount(victim_1_2,subnet_1_2,user)","LEAF",1
+62,65,-1
+66,"principalCompromised(victim_1_2)","OR",0
+67,"RULE 12 (password sniffing)","AND",0
+67,61,-1
+67,65,-1
+66,67,-1
+62,66,-1
+61,62,-1
+68,"RULE 3 (remote exploit for a client program)","AND",0
+69,"accessMaliciousInput(subnet_1_2,victim_1_2,ie)","OR",0
+70,"RULE 22 (Browsing a malicious website)","AND",0
+70,11,-1
+71,"hacl(subnet_1_2,internet,httpProtocol,httpPort)","LEAF",1
+70,71,-1
+72,"inCompetent(victim_1_2)","LEAF",1
+70,72,-1
+69,70,-1
+68,69,-1
+68,65,-1
+73,"vulExists(subnet_1_2,'N1-2010-0490',ie,remoteClient,privEscalation)","LEAF",1
+68,73,-1
+61,68,-1
+74,"execCode(workStation_1,root)","OR",0
+75,"RULE 4 (Trojan horse installation)","AND",0
+76,"accessFile(workStation_1,write,'/export')","OR",0
+77,"RULE 17 (NFS shell)","AND",0
+78,"hacl(fileServer_1,workStation_1,nfsProtocol,nfsPort)","LEAF",1
+77,78,-1
+79,"nfsExportInfo(workStation_1,'/export',write,fileServer_1)","LEAF",1
+77,79,-1
+80,"execCode(fileServer_1,user)","OR",0
+81,"RULE 0 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+82,"canAccessHost(fileServer_1)","OR",0
+83,"RULE 8 (Access a host through executing code on the machine)","AND",0
+83,80,-1
+82,83,-1
+81,82,-1
+84,"hasAccount(victim_1_3,fileServer_1,user)","LEAF",1
+81,84,-1
+85,"principalCompromised(victim_1_3)","OR",0
+86,"RULE 12 (password sniffing)","AND",0
+86,80,-1
+86,84,-1
+85,86,-1
+81,85,-1
+80,81,-1
+87,"RULE 3 (remote exploit for a client program)","AND",0
+88,"accessMaliciousInput(fileServer_1,victim_1_3,windows_2003_server)","OR",0
+89,"RULE 22 (Browsing a malicious website)","AND",0
+89,11,-1
+90,"hacl(fileServer_1,internet,httpProtocol,httpPort)","LEAF",1
+89,90,-1
+91,"inCompetent(victim_1_3)","LEAF",1
+89,91,-1
+88,89,-1
+87,88,-1
+87,84,-1
+92,"vulExists(fileServer_1,'N1-2010-0812',windows_2003_server,remoteClient,privEscalation)","LEAF",1
+87,92,-1
+80,87,-1
+77,80,-1
+76,77,-1
+75,76,-1
+74,75,-1
