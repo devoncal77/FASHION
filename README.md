@@ -44,5 +44,5 @@ well as a window showing the network routing and firewall placement.
 ### Gurobi Optimization Software
 
 In order to run the optimization model, Gurobi Optimization libraries are required. 
-See [gurobi.com](https://www.gurobi.com) for instructions these libraries and a license.
+See [gurobi.com](https://www.gurobi.com) for instructions on installing these libraries and a license.
 
