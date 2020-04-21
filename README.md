@@ -28,4 +28,21 @@ exploitation of vulnerabilities (e.g., a weak password, a bug in a software pack
 the ability to guess a stack address,...). In this work, we focus on risk that is due
 to network configuration.
 
+## Instructions for Running the Code
+
+The optimization model and network visualization code is Python2.7 compatible.
+The framework can be run using `python main.py <instanceFile>` (if no instance filename is given, 
+the model will run with `smallToy.json`).  
+
+This will generate an image of the attack graph that shows which arcs were cut by the optimizer, as 
+well as a window showing the network routing and firewall placement.
+
+### Install Dependencies
+
+`pip install Pillow Tk graphviz tarjan`
+
+### Gurobi Optimization Software
+
+In order to run the optimization model, Gurobi Optimization libraries are required. 
+See [gurobi.com] (https://www.gurobi.com) for instructions these libraries and a license.
 
